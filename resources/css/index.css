@@ -1,0 +1,45 @@
+.fondo {
+    background-image: url("../1.gif");
+    background-size: 106%;
+    position: relative;
+    background-position: 60% 0%;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.boton {
+    border-radius: 20px 20px 20px 20px;
+    font-size: 80vw;
+    font-weight: 500;
+    width: 250px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+    .fondo {
+        background-image: url("../2.gif");
+        background-size: 129%;
+        position: relative;
+        background-position: 51% 0%;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+    .h1-re {
+        font-size: 2rem;
+    }
+    .h5-re{
+        margin-right: 5px !important;
+        margin-left: 5px !important;
+        margin-top: 250px;
+        color: black !important;
+    }
+    .h6-re{
+        color: white !important;
+    }
+    .boton-mov {
+        margin-top: 15px;
+        background-color: #009adc;
+    }
+}
