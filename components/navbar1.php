@@ -29,7 +29,7 @@
                   font-size: 80%;
                   font-weight: 500;
                 "
-                href="signin.php"
+                href="signin"
               >
                 Iniciar sesión
               </a>

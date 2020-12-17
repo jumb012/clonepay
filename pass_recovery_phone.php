@@ -32,8 +32,8 @@
             </div>
             <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit">Siguiente</button>
           </form>
-          <p class="text-center text-2 mb-2"><a class="btn-link" href="pass_recovery.php">He recordado mi correo electrónico</a></p>
-          <p class="text-center text-2 mb-2" style="margin-top: 50px"><a class="btn-link" href="signin.php">Volver al inicio de sesión de PayPal</a></p></div>
+          <p class="text-center text-2 mb-2"><a class="btn-link" href="pass_recovery">He recordado mi correo electrónico</a></p>
+          <p class="text-center text-2 mb-2" style="margin-top: 50px"><a class="btn-link" href="signin">Volver al inicio de sesión de PayPal</a></p></div>
       </div>
     </div>
   </div>

@@ -33,7 +33,7 @@
             </div>
             <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit">Iniciar sesión</button>
           </form>
-          <p class="text-center text-2 mb-2"><a class="btn-link" href="pass_recovery.php">¿Tiene problemas para iniciar sesión?</a></p>
+          <p class="text-center text-2 mb-2"><a class="btn-link" href="pass_recovery">¿Tiene problemas para iniciar sesión?</a></p>
           <div class="d-flex align-items-center mb-3">
             <hr class="flex-grow-1">
             <span class="mx-2 text-muted">o</span>
