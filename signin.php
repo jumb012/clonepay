@@ -39,7 +39,7 @@
             <span class="mx-2 text-muted">o</span>
             <hr class="flex-grow-1">
           </div>
-          <a class="btn btn-light shadow-none border btn-block" href="#" >Registrarse</a> </div>
+          <a class="btn btn-light shadow-none border btn-block" href="account-selection" >Registrarse</a> </div>
       </div>
     </div>
   </div>

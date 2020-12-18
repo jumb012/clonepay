@@ -12,7 +12,7 @@
        <div style="text-align: center; margin-bottom: 24%">
             <h1 class="mt-4 display-4 h1-re" align="center" style="color: white;">Envía un regalo en solo unos pasos.</h1>
             <h5 class="h5 h5-re"align="center" style="color: white;">Di adiós a las filas de la temporada con pagos rápidos y fáciles.</h5>
-           <button class="btn btn-light boton boton-mov"><h6 class="h6-re" style="color: rgb(9, 58, 156)">Regístrate ahora</h6></button>
+            <a href="account-selection"><button class="btn btn-light boton boton-mov"><h6 class="h6-re" style="color: rgb(9, 58, 156)">Regístrate ahora</h6></button></a>
        </div>
     </div>
 

@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html>
-<body>
   <div>
         <nav class="navbar navbar-expand-lg navbar-dark container ">
           <div class="navbar-brand">
-            <img src="resources/pp-white.svg" height="30" />
+            <a href="https://www.clonepay.tk"><img src="resources/pp-white.svg" height="30" /></a>
           </div>
           <button
             class="navbar-toggler"
@@ -40,7 +37,7 @@
                   font-size: 80%;
                   font-weight: 500;
                 "
-                href="#"
+                href="account-selection"
               >
                 Abrir cuenta
               </a>
@@ -48,5 +45,3 @@
           </div>
         </nav>
       </div>
-</body>
-</html>
