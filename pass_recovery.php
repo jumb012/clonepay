@@ -17,6 +17,17 @@
 <!--
 ========================= -->
 </head>
+<?php 
+session_start();
+  if(isset($_SESSION['error'])){
+    $mensaje=$_SESSION['error'];
+    $style= 'text-align: center; font-size: 13px; margin-top: 20px; margin-bottom: 20px; color:red;';
+    unset($_SESSION['error']);
+  }else{
+    $mensaje="Ingrese el correo electrónico que utiliza en PayPal y le ayudaremos a crear una nueva contraseña.";
+    $style= 'text-align: center; font-size: 13px; margin-top: 20px; margin-bottom: 20px';
+  }
+?>
 <body>
 <div id="main-wrapper" class="oxyy-login-register min-vh-100 d-flex flex-column">
   <div class="container my-auto">
@@ -25,10 +36,10 @@
         <div class="bg-white border rounded p-4 py-sm-5 px-sm-5">
           <div class="logo mb-4"> <a class="d-flex justify-content-center" title="paypal"><img src="resources/logo192.png" alt="paypal" height="34"></a></div>
           <h5 class="display-4" style="text-align: center; font-size: 25px; margin-top: 35px">¿Necesita ayuda con su contraseña?</h5>
-          <h5 class="display-4" style="text-align: center; font-size: 13px; margin-top: 20px; margin-bottom: 20px">Ingrese el correo electrónico que utiliza en PayPal y le ayudaremos a crear una nueva contraseña.</h5>
-          <form id="loginForm" method="post">
+          <h5 class="display-4" style="<?=$style?>"><?= $mensaje?></h5>
+          <form action="Server/cambio_contraseña" id="passRecoveryForm" method="post">
             <div class="form-group">
-              <input type="email" class="form-control" id="emailAddress" required placeholder="Correo electrónico">
+              <input name="txtCorreo" type="email" class="form-control" id="correoElectronico" required placeholder="Correo electrónico">
             </div>
             <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit">Siguiente</button>
           </form>

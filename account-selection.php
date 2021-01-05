@@ -19,25 +19,25 @@
 				<div class="bg-light row">
 					<div class="col-sm-8">
 						<div style="margin: 10% 10%">
-							<h4 style="font-size: 23px">Crear cuenta Personal</h4>
+							<h4 style="font-size: 23px; color: #007bff">Crear cuenta Personal</h4>
 							<h6>Para comprar en línea</h6>
 							<p>Abre una cuenta sin costo y compra en millones de sitios alrededor del mundo.</p>
 						</div>
 					</div>
 					<div class="col-sm-4" style="margin: auto;">
-						<button class="btn btn-primary">Continuar</button>
+						<a href="welcome/signup_personal"><button class="btn btn-primary">Continuar</button></a>
 					</div>
 				</div>
 				<div class="bg-light row" style="margin-top: 10px">
 					<div class="col-sm-8">
 						<div style="margin: 10% 10%">
-							<h4 style="font-size: 23px">Crear Cuenta de Negocios</h4>
+							<h4 style="font-size: 23px; color: #007bff">Crear Cuenta de Negocios</h4>
 							<h6>Para vender y recibir pagos</h6>
 							<p>Abre una cuenta sin costo y comienza a vender y recibir pagos en línea.</p>
 						</div>
 					</div>
 					<div class="col-sm-4" style="margin: auto;">
-						<button class="btn btn-primary">Continuar</button>
+						<a href="welcome/signup_business"><button class="btn btn-primary">Continuar</button></a>
 					</div>
 				</div>
 			</div>
