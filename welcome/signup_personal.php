@@ -5,7 +5,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
 	<title>Crear una cuenta de PayPal Personal o Empresas</title>
-	<link rel="icon" type="image/png" href="favicon.ico" />
     <!-- Web Fonts
 ========================= -->
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i' type='text/css'>
