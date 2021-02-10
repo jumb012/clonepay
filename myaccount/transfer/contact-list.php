@@ -53,7 +53,7 @@
     <header class="fijado">
         <?php include("components/navbar2.php"); ?>
     </header>
-    <ul class="nav justify-content-center nav_eys" style="margin-top: 65px">
+    <ul class="nav justify-content-center nav_eys" style="margin-top: 68px">
         <li class="nav-item eys-op" style="margin-left: 0px;">
             <a class="nav-link btn" href="pay.php">Enviar</a>
         </li>
