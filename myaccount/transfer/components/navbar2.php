@@ -15,7 +15,6 @@
                             × Cerrar
                         </button>
                         <h5 class="py-2 text-white">
-                            Jassiel Martínez Beltrán
                         </h5>
                     </div>
                     <ul class="navbar-nav">
