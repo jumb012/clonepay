@@ -5,24 +5,21 @@ session_start();
  
 if (isset($_POST['registro'])) {
  
-    $Nombre_Banco = $_POST['Nombre_Banco'];
-    $Numero_Cuenta = $_POST['Numero_Cuenta'];
-    $Nombre_Completo = $_POST['Nombre_Completo'];
+    $Nombre_banco = $_POST['Nombre_banco'];
+    $Numero_cuenta = $_POST['Numero_cuenta'];
+    $Estatus = $_POST['Estatus'];
+    $ID = $_POST['ID'];
+    $id_h = $_POST['id_h'];
     
- 
-        $query = $connection->prepare("INSERT INTO cuenta_bancaria(Nombre_Banco,Numero_Cuenta,Nombre_Completo) VALUES (:Nombre_Banco, :Numero_Cuenta, :Nombre_Completo)");
-        $query->bindParam("Nombre_Banco", $Nombre_Banco, PDO::PARAM_STR);
-        $query->bindParam("Numero_Cuenta", $Numero_Cuenta, PDO::PARAM_STR);
-        $query->bindParam("Nombre_Completo", $Nombre_Completo, PDO::PARAM_STR);
-        
-        $result = $query->execute();
- 
-        if ($result) {
-            echo '<p class="success">Tu registro fue exitoso!</p>';
-            return ;
-        }else {
-            echo '<p class="error">Algo fue mal!</p>';
-        }
+    
+    $sql= "INSERT INTO cuenta_bancaria(Nombre_banco,Numero_cuenta,Estatus,ID) 
+    VALUES ('$Nombre_banco','$Numero_cuenta','$Estatus','$ID')";
+    if ($conn->query($sql)===TRUE) {
+        header("Location:../banking_services/add_card.php?id_h=$id_h");
+    }else{
+        $_SESSION['error']="Ha ocurrido un error al registrar su cuenta, intentelo de nuevo.";
+        header('Location:../banking_services/bank_account.php?id_h=$id_h');
+    }
     }
  
 ?>

@@ -1,3 +1,12 @@
+<?php  
+  
+  $id_h= $_GET["id_h"];
+  include('../Server/Conexion.php'); // 
+  session_start();
+  $sql= "SELECT id,CONCAT(Nombre,' ',Ap_pat,' ',Ap_mat) AS Nombre_Completo FROM registro_usuario where id_h = '$id_h'"; 
+  $resultado= mysqli_query($conn,$sql);
+  $fila= $resultado->fetch_row();
+?>
 <!DOCTYPE html>
 <html ang="es">
 <head>
@@ -25,20 +34,34 @@
         <div class="bg-white border rounded p-4 py-sm-5 px-sm-5">
           <div class="logo mb-4"> <a class="d-flex justify-content-center" title="paypal"><img src="../resources/logo192.png" alt="paypal" height="34"></a></div>
           <h5 class="display-4" style="text-align: center; font-size: 25px; margin-top: 35px; margin-bottom: 25px">Asociar una cuenta bancaria</h5>
-          <form id="BankAccountForm" method="post">
+          <form id="BankAccountForm" action="../Server/registro_cuenta.php" method="post">
             <div class="form-group">
-              <input style="margin-top: 5px" type="text" class="form-control" required placeholder="Nombre del banco">
-              <input style="margin-top: 5px" type="text" class="form-control" required placeholder="Número de cuenta">
+              <!--
+              <input style="margin-top: 5px" type="text" class="form-control" name="Nombre_banco" required placeholder="Nombre del banco"> 
+            -->
+              <SELECT style="margin-top: 5px" class="form-control" name="Nombre_banco" required>
+              <option selected>Seleccione su Banco</option>
+              <option value="BBVA">BBVA</option>
+              <option value="BANORTE">BANORTE</option>
+              <option value="HSBC">HSBC</option>
+              
+              </SELECT>
+              
+              <input style="margin-top: 5px" type="text" class="form-control" name="Numero_cuenta" required placeholder="Número de cuenta" minlength="18" maxlength="18">
+            
             </div>
             <div style="background-color: #f5f7fa;" class="container">
               <label><h5 class="h6" style="font-size: 13px; margin-top: 10px">Nombre:</h5></label><br>
-              <label style="margin-top: -10px"><h5 class="display-4" style="font-size: 16.5px;">Nombre Apellidos</h5></label>
+              <label style="margin-top: -10px"><h5 class="display-4" style="font-size: 16.5px;"><?php echo $fila[1] ?></h5></label>
             </div>
             <label><h6 class="display-4" style="font-size: 14px; margin-top: 15px">
           		Asegúrese de revisar su número de cuenta. Es posible que los bancos 
                 no identifiquen errores hasta que decida transferir fondos.
           	</h6></label>
-            <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit">Asociar cuenta bancaria</button>
+            <input type="hidden" name="id_h" value="<?php echo $id_h ?>">
+            <input type="hidden" name="Estatus" value="Activo">
+            <input type="hidden" name="ID" value="<?php echo $fila[0] ?>">
+            <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit" name="registro">Asociar cuenta bancaria</button>
           </form>
       	</div>
       </div>

@@ -1,0 +1,127 @@
+body{
+    background-color: #f5f7fa;
+}
+.fijado{
+    position: fixed;
+    top: 0; width: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+.contenedor{
+    margin-top: 110px;
+    display: grid;
+}
+.contenido{
+    margin-left:3.5%;
+    margin-right:3.5%;
+}
+.cmp{
+    height: 160px;
+    background-color: white;
+    border-radius: 20px;
+    position: relative;  
+    margin-top: 15px;
+    margin-left: 15px;
+}
+.cmp::after{
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
+    content: '';
+    background-color: #cfcfcf;
+    width: 95%;
+    height: 80%;
+    filter: blur(7px);
+    z-index: -1;
+    border-radius: 20px;
+}
+.temporal{
+    height: 170px;
+    background-image: url("../images/spotify-global.webp");
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    position: relative;  
+    margin-top: 15px;
+    margin-left: 15px;
+}
+.temporal::after{
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
+    content: '';
+    background-color: #cfcfcf;
+    width: 95%;
+    height: 80%;
+    filter: blur(7px);
+    z-index: -1;
+    border-radius: 20px;
+}
+.grosor{
+    border-top: 1px solid black;
+    margin-top: 30px;
+    width: 95%;    
+    margin-left: 3px;
+}
+.icon_rebajas{
+    background-color: #0086e2;
+    -webkit-mask: url("../icons/offers-rewards.svg") no-repeat;
+    mask: url("../icons/offers-rewards.svg") no-repeat;
+    height: 50px;
+    margin-left: 50%;
+}
+.icon_enviar{
+    background-color: white;
+    -webkit-mask: url("../icons/send.svg") no-repeat;
+    mask: url("../icons/send.svg") no-repeat;
+    height: 40px;
+}
+.icon_solicitar{
+    background-color: white;
+    -webkit-mask: url("../icons/request.svg") no-repeat;
+    mask: url("../icons/request.svg") no-repeat;
+    height: 40px;
+}
+
+.nav_eys{
+    background-color: white;
+    height: 60px;
+    margin-top: 70px;
+    align-content: center;
+    border-bottom: .5px solid rgba(218, 213, 213, 0.685);
+}
+.eys-op{
+    margin-left: 70px;
+    width: 100px;
+    height: 60px;
+    display: grid;
+    place-items:center;
+}
+.actual{
+    border-bottom: 2px solid #0070ba;
+}
+
+@media (max-width: 992px){
+    .icon_rebajas{
+        background-color: #0086e2;
+        -webkit-mask: url("../icons/offers-rewards.svg") no-repeat;
+        mask: url("../icons/offers-rewards.svg") no-repeat;
+        height: 100px;
+        margin-left: -5px;
+    }
+    .temporal{
+        height: 170px;
+        background-image: url("../images/spotify-global.webp");
+        background-size: cover;
+        background-position: -110px;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+        position: relative;  
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+    .eys-op{
+        margin-left: 0px;
+    }
+}

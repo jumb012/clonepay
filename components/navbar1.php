@@ -1,7 +1,7 @@
   <div>
         <nav class="navbar navbar-expand-lg navbar-dark container ">
           <div class="navbar-brand">
-            <a href="https://www.clonepay.tk"><img src="resources/pp-white.svg" height="30" /></a>
+            <a href="../newpaypal"><img src="resources/pp-white.svg" height="30" /></a>
           </div>
           <button
             class="navbar-toggler"
@@ -26,7 +26,7 @@
                   font-size: 80%;
                   font-weight: 500;
                 "
-                href="signin"
+                href="signin.php"
               >
                 Iniciar sesión
               </a>
@@ -37,7 +37,7 @@
                   font-size: 80%;
                   font-weight: 500;
                 "
-                href="account-selection"
+                href="account-selection.php"
               >
                 Abrir cuenta
               </a>

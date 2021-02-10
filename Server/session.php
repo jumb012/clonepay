@@ -11,6 +11,6 @@ $row = mysqli_fetch_assoc($ses_sql);
 $login_session =$row['email'];
 if(!isset($login_session)){
 mysqli_close($con);
-header('Location: index');
+header('Location: index.php');
 }
 ?>

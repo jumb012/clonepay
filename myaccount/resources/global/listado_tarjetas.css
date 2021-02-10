@@ -1,0 +1,46 @@
+.info_bank{    
+    height: 180px;
+    width: 300px;
+    background-image: url('../images/generic_bank.webp');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+}
+.info_bank::after{
+    position: absolute;
+    height: 93%;
+    width: 95%;
+    content: '';
+    background-color: black;
+    border-radius: 20px;
+    bottom: 0px;
+    left: 5px;
+    filter: blur(10px);
+    z-index: -1;
+}
+.info_tarjeta{
+    height: 180px;
+    width: 300px;
+    background: radial-gradient(circle farthest-side at center, #302b63, #24243e,#0f0c29 125%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+}
+.info_tarjeta::after{
+    position: absolute;
+    height: 93%;
+    width: 95%;
+    content: '';
+    background-color: black;
+    border-radius: 20px;
+    bottom: 0px;
+    left: 5px;
+    filter: blur(10px);
+    z-index: -1;
+}

@@ -1,3 +1,13 @@
+<?php  
+  
+  $id_h= $_GET["id_h"];
+  include('../Server/Conexion.php'); // 
+  session_start();
+  $sql= "SELECT id FROM registro_usuario where id_h = '$id_h'"; 
+  $resultado= mysqli_query($conn,$sql);
+  $fila= $resultado->fetch_row();
+?>
+
 <!DOCTYPE html>
 <html ang="es">
 <head>
@@ -31,26 +41,29 @@
           <label><h6 class="display-4" style="font-size: 14px;">
           		PayPal le permite realizar pagos utilizando una variedad de formas de pago.
           </h6></label>
-          <form id="AddCardForm" method="post">
+          <form id="AddCardForm" action="../Server/registro_tarjeta.php" method="post">
             <div class="form-group">
-              <input style="margin-top: 5px" type="text" class="form-control" required placeholder="N.° tarjeta débito o crédito">
-              <select style="margin-top: 5px" class="form-control" required>
+              <input style="margin-top: 5px" type="text" class="form-control" name="Num_tarjeta" required placeholder="N.° tarjeta débito o crédito" minlength="16" maxlength="16">
+              <select style="margin-top: 5px" class="form-control" name="Tipo_tarjeta" required>
                 <option selected>Seleccione su tipo de tarjeta</option>
-                <option>Visa</option>
-                <option>MasterCard</option>
-                <option>American Express</option>
+                <option value="Visa">Visa</option>
+                <option value="MasterCard">MasterCard</option>
+                <option value="American Express">American Express</option>
               </select>
-              <input style="margin-top: 5px" type="text" class="form-control" required placeholder="Fecha de vencimiento">
+              <input style="margin-top: 5px" type="month" class="form-control" name="Vencimiento" required  >
               <div class="row">
                 <div class="col-9">
-                    <input style="margin-top: 5px" type="text" class="form-control" required placeholder="Código de seguridad">
+                    <input style="margin-top: 5px" type="text" class="form-control" name="Codigo_seguridad" required placeholder="Código de seguridad" minlength="3" maxlength="3">
                 </div>
                 <div class="col-2">
                     <img src="https://cdn2.iconfinder.com/data/icons/credit-cards-6/156/security_code_back-512.png" height="50">
                 </div>
               </div>
             </div>
-            <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit">Asociar tarjeta</button>
+            <input type="hidden" name="id_h" value="<?php echo $id_h ?>">
+            <input type="hidden" name="Estatus" value="Activo">
+            <input type="hidden" name="ID" value="<?php echo $fila[0] ?>">
+            <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" name="registro" type="submit">Asociar tarjeta</button>
           </form>
       	</div>
       </div>

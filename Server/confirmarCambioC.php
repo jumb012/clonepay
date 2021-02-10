@@ -10,14 +10,15 @@
     var_dump($query);
     if (!$array) {
         $_SESSION['error']="Se ha producido un error. Inténtelo de nuevo.";
-        header('Location: ../pass_recovery');
+        header('Location: ../pass_recovery.php');
         die() ;
     }
     $Contraseña=$array['RecuperarC'];
-    $sql2="UPDATE registro_usuario SET Contraseña='$Contraseña' WHERE Correo='$Correo'";
+    $Contraseña_h=md5($Contraseña);
+    $sql2="UPDATE registro_usuario SET Contraseña='$Contraseña_h' WHERE Correo='$Correo'";
     $query2=mysqli_query($conn,$sql2);
     $sql3="DELETE FROM recuperar WHERE Correo='$Correo'";
     $query3=mysqli_query($conn,$sql3);
     $_SESSION['rpt']="La contraseña ha sido actualizada, Inicie Sesión para verificar.";
-    header('Location: ../signin');
+    header('Location: ../signin.php');
 ?>

@@ -3,24 +3,21 @@
 include('Conexion.php');
 session_start();
 
-if (isset($_POST['cambio'])) {
+if (isset($_POST['verificar'])) {
 
-    $Num_tarjeta = $_POST['Num_tarjeta'];
-    $verificada = $_POST['cambio'];
+    $ID = $_POST['ID'];
+    $id_h= $_POST['id_h'];
     
  
-    $query = $connection->prepare("UPDATE tarjeta_bancaria set verificada=:verificada WHERE Num_tarjeta=:Num_tarjeta");
-        $query->bindParam("Num_tarjeta", $Num_tarjeta, PDO::PARAM_STR);
-        $query->bindParam("verificada", $verificada, PDO::PARAM_STR);
-        $result = $query->execute();
- 
-        if ($result) {
-            echo '<p class="success">Tu registro fue exitoso!</p>';
-            return ;
-        }
-        else {
-            echo '<p class="error">Algo fue mal!</p>';
-        }
+    $sql= "UPDATE tarjeta_bancaria set Verificada= 'Si' where ID = '$ID'";
+    if ($conn->query($sql)===TRUE) {
+        header("Location:../banking_services/select_pay_method.php?id_h=$id_h");
     }
+    else{
+        $_SESSION['error']="Ha ocurrido un error al registrar su cuenta, intentelo de nuevo.";
+        header('Location:../banking_services/add_card.php?id_h=$id_h');
+    }
+
+}
 
 ?>

@@ -9,26 +9,20 @@ if (isset($_POST['registro'])) {
     $Tipo_tarjeta = $_POST['Tipo_tarjeta'];
     $Vencimiento = $_POST['Vencimiento'];
     $Codigo_seguridad = $_POST['Codigo_seguridad'];
-    $Direccion_tarjeta = $_POST['Direccion_tarjeta'];
+    $ID = $_POST['ID'];
+    $Estatus = $_POST['Estatus'];
     
  
-        $query = $connection->prepare("INSERT INTO tarjeta_bancaria(Num_tarjeta,Tipo_tarjeta,Vencimiento,Codigo_seguridad,Direccion_tarjeta) VALUES (:Num_tarjeta, :Tipo_tarjeta, :Vencimiento, :Codigo_seguridad, :Direccion_tarjeta)");
-        $query->bindParam("Num_tarjeta", $Num_tarjeta, PDO::PARAM_STR);
-        $query->bindParam("Tipo_tarjeta", $Tipo_tarjeta, PDO::PARAM_STR);
-        $query->bindParam("Vencimiento", $Vencimiento, PDO::PARAM_STR);
-        $query->bindParam("Codigo_seguridad", $Codigo_seguridad, PDO::PARAM_STR);
-        $query->bindParam("Direccion_tarjeta", $Direccion_tarjeta, PDO::PARAM_STR);
-        
-        $result = $query->execute();
- 
-        if ($result) {
-            echo '<p class="success">Tu registro fue exitoso!</p>';
-            return ;
-        }
-        else {
-            echo '<p class="error">Algo fue mal!</p>';
-        }
+        $sql= "INSERT INTO tarjeta_bancaria(Num_tarjeta,Tipo_tarjeta,Vencimiento,Codigo_seguridad,ID,Estatus) 
+    VALUES ('$Num_tarjeta','$Tipo_tarjeta','$Vencimiento','$Codigo_seguridad','$ID','$Estatus')";
+    if ($conn->query($sql)===TRUE) {
+        header("Location:../index.php");
+        //header("Location:../myaccount/summary.php?id_h=$id_h");
+    }else{
+        $_SESSION['error']="Ha ocurrido un error al registrar su cuenta, intentelo de nuevo.";
+        header('Location:../banking_services/add_card.php?id_h=$id_h');
     }
+}
  
 ?>
 

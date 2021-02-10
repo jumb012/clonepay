@@ -1,3 +1,27 @@
+<?php  
+  
+  $id_h= $_GET["id_h"];
+  include('../Server/Conexion.php'); // 
+  session_start();
+  
+  $sql= "SELECT id FROM registro_usuario where id_h = '$id_h'"; 
+  $resultado= mysqli_query($conn,$sql);
+  $fila= $resultado->fetch_row();
+  $id = $fila[0];
+
+  $sql= "SELECT Tipo_tarjeta FROM tarjeta_bancaria where ID = '$id'"; 
+  $resultado= mysqli_query($conn,$sql);
+  $fila= $resultado->fetch_row();
+  $tipo = $fila[0];
+
+  $sql= "SELECT Num_tarjeta FROM tarjeta_bancaria where ID = '$id'"; 
+  $resultado= mysqli_query($conn,$sql);
+  $fila= $resultado->fetch_row();
+  $numero = $fila[0];
+  $cadena =strval($numero); 
+?>
+
+
 <!DOCTYPE html>
 <html ang="es">
 <head>
@@ -25,7 +49,7 @@
         <div class="bg-white border rounded p-4 py-sm-5 px-sm-5">
           <div class="logo mb-4"> <a class="d-flex justify-content-center" title="paypal"><img src="../resources/logo192.png" alt="paypal" height="34"></a></div>
           <h5 class="display-4" style="text-align: center; font-size: 25px; margin-top: 35px; margin-bottom: 20px">
-                Confirmar tarjeta TIPO terminada en ••••XXXX
+                Confirmar tarjeta <?php echo $tipo ?> terminada en ••••<?php echo substr($cadena, -4) ?>
           </h5>
           <label><h6 class="display-4" style="font-size: 14px;">
           		Hemos cargado un monto en su tarjeta.
@@ -45,12 +69,14 @@
                 </div>
                 <hr style="margin-top: -5px">
           </div>
-          <form id="VerifyCardForm" method="post">
+          <form id="VerifyCardForm" action="../Server/verificar_tarjeta.php" method="post">
             <div class="form-group">
               <label><h5 class="display-4" style="font-size: 15px;">Código de 4 dígitos:</h5></label>
-              <input style="margin-top: -10px" type="text" class="form-control" required placeholder="<?php echo rand(1000,9999);?>" readonly>
+              <input style="margin-top: -10px" type="text" class="form-control" required value="<?php echo rand(0001,9999)?>" readonly>
             </div>
-            <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit">Confirmar</button>
+            <input type="hidden" name="ID" value="<?php echo $id?>">
+            <input type="hidden" name="id_h" value="<?php echo $id_h?>">
+            <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit" name="verificar">Confirmar</button>
           </form>
       	</div>
       </div>
